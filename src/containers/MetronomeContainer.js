@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Slider from '../components/Slider.js'
 import Player from '../components/Player.js'
-import Click1 from '../Audio/click1.wav'
+import Click1 from '../Audio/metro_beat.wav'
 
 class MetronomeContainer extends Component {
 
@@ -26,11 +26,11 @@ class MetronomeContainer extends Component {
 
   playPause(){
 
-    if (!this.state.playing){
-      this.setState({timer : setInterval(this.playSound,(60/this.state.bpm)*1000)});
+    if (this.state.playing){
+      clearInterval(this.state.timer);
     }
     else{
-      clearInterval(this.state.timer)
+      this.setState({timer : setInterval(this.playSound,(60/this.state.bpm)*1000)});
     }
     let newPlaying = !(this.state.playing);
     this.setState({playing: newPlaying});
