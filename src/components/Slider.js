@@ -7,8 +7,8 @@ const Slider = (props) => {
   }
 
   return(
-    <div>
-      <input type="range" min="40" max="240" value={props.bpm} onChange={bpmChange}/>
+    <div className="slidercontainer">
+      <input type="range" min="40" max="240" value={props.bpm} onChange={bpmChange} className="slider"/>
     </div>
 
   )

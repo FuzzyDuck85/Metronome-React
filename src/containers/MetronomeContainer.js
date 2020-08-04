@@ -47,21 +47,30 @@ class MetronomeContainer extends Component {
   render(){
     const {playing, bpm} = this.state;
     return (
-      <div>
-      <div>
+      <div className="metronome">
+      <div className="text">
       <h1>Metronome</h1>
       <h2>BPM: {bpm}</h2>
+      </div>
+      <br></br>
+
+      <div>
+
       <Slider
       bpm={this.state.bpm}
       onBpmChange={this.handleBpmChange}
       />
+      </div>
+      <div>
+        <br></br>
       <Player
       playing={this.state.playing}
       playPause={this.playPause}
       />
+      </div>
 
       </div>
-      </div>
+
     )
   }
 
